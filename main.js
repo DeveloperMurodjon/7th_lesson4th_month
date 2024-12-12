@@ -421,12 +421,57 @@ for (let i = 1; i < arr56.length; i++) {
 }
 arr56.splice(index, 1);
 console.log(arr56);
-// Massivning eng katta elementini o‘chiring.
-// Massivdagi barcha sonlarni 2 ga karrali bo‘lgan sonlar bilan almashtiring.
-// Massivdan bir xil qiymatlarni olib tashlab, faqat noyob qiymatlarni qaytaring.
-// Massiv elementlarini karralik bo‘yicha (2, 3, 5 kabi) guruhlarga ajrating.
-// Massivni aylantirish (rotation) orqali 3 marta oldinga suring.
 
+// Massivning eng katta elementini o‘chiring.
+let arr57 = [4, -753, 0, 12, -4, 45, 12, 888, 0, -79, 5, 777, -9];
+let maxIndex = 0;
+for (let i = 1; i < arr57.length; i++) {
+  if (arr57[i] > arr57[maxIndex]) {
+    maxIndex = i;
+  }
+}
+arr57.splice(maxIndex, 1);
+console.log(arr57);
+
+// Massivdagi barcha sonlarni 2 ga karrali bo‘lgan sonlar bilan almashtiring.
+let arr58 = [4, -753, 0, 12, -4, 45, 12, 888, 0, -79, 5, 777, -9];
+let change = 1;
+for (let i = 0; i < arr58.length; i++) {
+  if (arr58[i] % 2 != 0) {
+    arr58[i] += 1;
+  }
+}
+console.log(arr58);
+
+// Massivdan bir xil qiymatlarni olib tashlab, faqat noyob qiymatlarni qaytaring.
+let arr59 = [4, -753, 0, 12, -4, 45, 12, 888, 0, -79, 5, 777, -9];
+let res2 = [];
+console.log(isExist(res, arr59));
+
+// Massiv elementlarini karralik bo‘yicha (2, 3, 5 kabi) guruhlarga ajrating.
+let arr60 = [4, -753, 0, 12, -4, 45, 12, 888, 0, -79, 5, 777, -9];
+
+let $2gaKarrali = [];
+let $3gaKarrali = [];
+let $5gaKarrali = [];
+
+for (let i = 0; i < arr60.length; i++) {
+  if (arr60[i] % 2 === 0) {
+    $2gaKarrali.push(arr60[i]);
+  }
+  if (arr60[i] % 3 === 0) {
+    $3gaKarrali.push(arr60[i]);
+  }
+  if (arr60[i] % 5 === 0) {
+    $5gaKarrali.push(arr60[i]);
+  }
+}
+
+console.log("2 ga karrali:", $2gaKarrali);
+console.log("3 ga karrali:", $3gaKarrali);
+console.log("5 ga karrali:", $5gaKarrali);
+
+// Massivni aylantirish (rotation) orqali 3 marta oldinga suring.
 // Qo’shimcha masalalar(ixtiyoriy)
 // Berilgan massivning barcha elementlarini shunday o‘zgartiringki, har bir elementning qiymati o‘zidan oldingi elementlar yig‘indisiga teng bo‘lsin.
 // Massivni ikkiga ajratib, faqat juft sonlar bir massivda, toq sonlar boshqa massivda bo‘lsin.
